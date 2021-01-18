@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-8">
+    <%= form_with model: @user do |user| %>
+      <div class="form-group">
+        <%= user.label :username %>
+        <%= user.text_field :username, class: 'form-control' %>
+      </div>
+      <%= user.submit "Sign Up!", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

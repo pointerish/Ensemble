@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="h2">Events Created By You:</div>
+      <%= render partial: 'share/eventcard', locals: { object: Event.where("created_by = ?", current_user.id) } %>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="h2">Events You're Attending:</div>
+      <%= render partial: 'share/my-event', locals: { object: @my_events } %>
+    </div>
+  </div>
+</div>
+
