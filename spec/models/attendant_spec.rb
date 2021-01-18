@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Attendant, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is not valid without an event_id"
+  it "is not valid without an user_id"
 end
