@@ -1,0 +1,29 @@
+<% object.each do |obj| %>
+  <div class="card my-2 my-lg-4">
+    <div class="card-body">
+        <h5 class="card-title red-me">
+          <%= link_to obj.name, event_url(obj.id) %>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Location: <%= obj.location %>
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Date: <%= obj.date.strftime("%B %d, %Y | %l:%M %p") %>
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Created By: <%= User.find(obj.created_by).username %>
+        </h6>
+        <% if logged_in? %>
+          <% if current_user.id == obj.created_by || attending?(obj.id, current_user.id) %>
+            <h6 class="card-subtitle mb-2 text-muted">
+              You already registered to attend this event!
+            </h6>
+          <% else %>
+            <button type="button" class="btn btn-success">
+              <%= link_to "I'm attending!", attend_path(user_id: current_user, event_id: obj.id), method: :post, class: 'mybutton' %>
+            </button>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+<% end %>

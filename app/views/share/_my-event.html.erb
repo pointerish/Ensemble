@@ -1,0 +1,18 @@
+<% object.each do |obj| %>
+  <div class="card my-2 my-lg-4">
+    <div class="card-body">
+        <h5 class="card-title red-me">
+          <%= link_to Event.find(obj.event_id).name, event_url(obj.event_id) %>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Location: <%= Event.find(obj.event_id).location %>
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Date: <%= Event.find(obj.event_id).date.strftime("%B %d, %Y | %l:%M %p") %>
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Created By: <%= User.find(Event.find(obj.event_id).created_by).username %>
+        </h6>
+    </div>
+  </div>
+<% end %>
