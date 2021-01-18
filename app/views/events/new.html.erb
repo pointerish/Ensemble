@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-12 col-lg-8 mt-20">
+    <% if @event.errors.any? %>
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% end %>
+        </ul>
+      <% end %>
+    <%= form_with model: @event do |event| %>
+      <div class="form-group">
+        <%= event.label :name %>
+        <%= event.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= event.label :location %>
+        <%= event.text_area :location, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= event.label :date %>
+        <%= event.datetime_field :date, class: 'form-control' %>
+      </div>
+      <%= event.submit "Create Event", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

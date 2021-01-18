@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-10 p-0">
+    <div class="h2"><%= @event.name %></div>
+    <p><%= @event.location %></p>
+    <% if @attendees.length > 0 %>
+      <h3>The following users are attending:</h3>
+    <% else %>
+      <h3>No uses are attending this event just yet!</h3>
+    <% end %>
+    <ul>
+      <% @attendees.each do |attendee| %>
+        <li><%= attendee.username %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
