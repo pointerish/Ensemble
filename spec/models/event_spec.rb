@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  it "is not valid withoug attributes" do
+  it "is not valid without attributes" do
     expect(Event.new).to_not be_valid
   end
   it "is not valid without a name" do
