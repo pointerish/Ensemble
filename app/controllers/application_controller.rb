@@ -2,15 +2,15 @@
 
 class ApplicationController < ActionController::Base
   include SessionsHelper
-  
+
   def current_user
     return unless session[:user_id]
-  
+
     @current_user ||= User.find(session[:user_id])
   end
-  
+
   private
-  
+
   def logged_in_user
     unless logged_in?
       store_location
@@ -19,6 +19,5 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-  
+
 # rubocop:enable Style/GuardClause
-  
