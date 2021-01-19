@@ -1,24 +1,63 @@
-# README
+![](https://img.shields.io/badge/RoR-red)
+![](https://img.shields.io/badge/SASS-blue)
+![](https://img.shields.io/badge/Bootstrap-purple)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1 align="center">Ensemble</h1>
 
-Things you may want to cover:
+<p align="center"><img src="app/assets/images/logo.png" width="100" height="100"></p>
 
-* Ruby version
+<p align="center"><b>Ensemble</b> is a Rails web application where users can host events and events can host users.</p>
 
-* System dependencies
+## Features
 
-* Configuration
+- Simple Signup, Login and Logout only requiring a username
+- Logged in users can create new events, attend other user's events and see all available events
+- An event can have many users and a user can create many events
 
-* Database creation
+## Database Structure
 
-* Database initialization
+<p align="center"><img src="app/assets/images/erd.webp" width="600"></p>
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+In order to run `Ensemble` locally you need the following:
 
-* Deployment instructions
+- Ruby 2.7.1 correctly installed
+- Rails 6.1 correctly installed
+- Clone the repository by either using HTTPS or SSH
 
-* ...
+To boot `Ensemble` run the following commands:
+
+- `bin/bundle install` from inside of the project's root directory
+- `bin/rails db:migrate` to run the database migrations
+- `bin/rails db:seed` to setup test users and events
+- `bin/rails s`  to run the application with the Puma web server
+
+## Author
+
+👤 **Josias Alvarado**
+
+- GitHub: [@pointerish](https://github.com/pointerish)
+- Twitter: [@pointerish](https://twitter.com/pointerish)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/josias-alvarado/)
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/pointerish/members-only/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Odin Project
+- Microverse
+- Clipart
+- My brain
+
+## License
+
+This project is [MIT](lic.url) licensed.
