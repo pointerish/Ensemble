@@ -33,7 +33,11 @@ To boot `Ensemble` run the following commands:
 - `bin/rails db:seed` to setup test users and events
 - `bin/rails s`  to run the application with the Puma web server
 
-To run RSpect tests simply run the following command:
+In case of a Webpacker error then run the following command:
+
+- `bin/bundle exec rake webpacker:install`
+
+To run RSpec tests simply run the following command:
 
 - `rspec spec/`
 
