@@ -11,6 +11,7 @@ class Event < ApplicationRecord
 
   scope :upcoming, -> { where('date >= ?', Time.zone.now) }
   scope :previous, -> { where('date < ?', Time.zone.now) }
+  scope :events_by_user, ->(user_identifier) { where('created_by = ?', user_identifier) }
 
   def set_user!(user)
     self.created_by = user.id

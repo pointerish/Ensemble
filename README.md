@@ -35,7 +35,7 @@ To boot `Ensemble` run the following commands:
 
 To run RSpect tests simply run the following command:
 
-- `rspec`
+- `rspec spec/`
 
 ## Author
 

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="col-12 col-lg-8 mt-20">
     <% if @event.errors.any? %>
-        <ul>
+      <ul>
         <% @event.errors.full_messages.each do |message| %>
           <div class="alert alert-danger"><%= message %></div>
         <% end %>
-        </ul>
-      <% end %>
+      </ul>
+    <% end %>
     <%= form_with model: @event do |event| %>
       <div class="form-group">
         <%= event.label :name %>

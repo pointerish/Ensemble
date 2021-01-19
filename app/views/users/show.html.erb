@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-12 col-lg-6">
       <div class="h2">Events Created By You:</div>
-      <%= render partial: 'share/eventcard', locals: { object: Event.where("created_by = ?", current_user.id) } %>
+      <% @by_me_events.each do |event| %>
+        <%= render partial: 'share/eventcard', locals: { obj: event } %>
+      <% end %>
     </div>
     <div class="col-12 col-lg-6">
       <div class="h2">Events You're Attending:</div>
