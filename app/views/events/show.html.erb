@@ -1,7 +1,32 @@
 <div class="container">
   <div class="col-10 p-0">
-    <div class="h2"><%= @event.name %></div>
-    <p><%= @event.location %></p>
+    <div class="card my-2 my-lg-4">
+    <div class="card-body">
+        <h5 class="card-title red-me">
+          <%= link_to Event.find(@event.id).name, event_url(@event.id) %>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Location: <%= Event.find(@event.id).location %>
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Date: <%= Event.find(@event.id).date.strftime("%B %d, %Y | %l:%M %p") %>
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Created By: <%= User.find(Event.find(@event.id).created_by).username %>
+        </h6>
+        <% if logged_in? %>
+          <% if current_user.id == @event.created_by || attending?( @event.id, current_user.id) %>
+            <h6 class="card-subtitle mb-2 text-muted">
+              You already registered to attend this event!
+            </h6>
+          <% else %>
+            <button type="button" class="btn btn-success">
+              <%= link_to "I'm attending!", attend_path(user_id: current_user, event_id:  @event.id), method: :post, class: 'mybutton' %>
+            </button>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
     <% if @attendees.length > 0 %>
       <h3>The following users are attending:</h3>
     <% else %>
