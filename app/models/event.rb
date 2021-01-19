@@ -14,7 +14,7 @@ class Event < ApplicationRecord
 
   def set_user!(user)
     self.created_by = user.id
-    save!
+    save
   end
 end
 

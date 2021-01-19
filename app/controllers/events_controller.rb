@@ -2,7 +2,7 @@
 
 class EventsController < ApplicationController
   include EventsHelper
-  before_action :logged_in_user, only: %i[new create destroy]
+  before_action :logged_in_user, only: %i[new create]
 
   def index
     @events = Event.all
