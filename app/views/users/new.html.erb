@@ -1,5 +1,12 @@
 <div class="container">
   <div class="col-8">
+    <% if @user.errors.any? %>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="alert alert-danger"><%= message %></div>
+        <% end %>
+        </ul>
+      <% end %>
     <%= form_with model: @user do |user| %>
       <div class="form-group">
         <%= user.label :username %>

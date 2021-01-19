@@ -1,4 +1,4 @@
-class AttendantController < ApplicationController
+class AttendantsController < ApplicationController
   def new
     @attendant = Attendant.new
   end
