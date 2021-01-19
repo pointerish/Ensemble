@@ -5,7 +5,7 @@
 <h1 align="center">Ensemble</h1>
 
 <p align="center"><img src="app/assets/images/logo.png" width="100" height="100"></p>
-
+<p align="center"><img src="app/assets/images/screenshot.png"></p>
 <p align="center"><b>Ensemble</b> is a Rails web application where users can host events and events can host users.</p>
 
 ## Features
