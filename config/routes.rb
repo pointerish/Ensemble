@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  post '/attend', to: 'attendants#create'
-  resources :events
+  resources :events do
+    post 'attend', on: :member
+  end
   resources :users
 end

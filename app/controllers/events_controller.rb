@@ -30,6 +30,11 @@ class EventsController < ApplicationController
 
   def destroy; end
 
+  def attend
+    @event.attendees << current_user
+    @event.save
+  end
+
   private
 
   def event_args
