@@ -16,7 +16,7 @@
 
 ## Database Structure
 
-<p align="center"><img src="app/assets/images/erd.webp" width="600"></p>
+<p align="center"><img src="app/assets/images/erd.png" width="600"></p>
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ To run RSpec tests simply run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/pointerish/members-only/issues).
+Feel free to check the [issues page](https://github.com/pointerish/private-events/issues).
 
 ## Show your support
 
@@ -61,10 +61,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Odin Project
-- Microverse
-- Clipart
-- My brain
+- [The Odin Project](https://www.theodinproject.com/)
+- [Microverse](https://microverse.org)
+- [Clipart](https://www.clipart.com/)
+- [DBDiagram](https://dbdiagram.io/)
+- [My brain](https://josias-alvarado.me)
 
 ## License
 
