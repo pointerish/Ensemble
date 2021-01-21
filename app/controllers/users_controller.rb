@@ -7,15 +7,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @my_events = Attendant.my_events(current_user)
-    @by_me_events = Event.events_by_user(current_user)
+    @my_events = @user.events
+    @attending_events = @user.attended_events
   end
 
   def create
     @user = User.new(user_args)
     if @user.save
       log_in @user
-      flash[:success] = 'Welcome to the Ensemble!'
       redirect_to @user
     else
       render 'new'

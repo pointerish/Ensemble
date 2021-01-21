@@ -8,15 +8,11 @@ class EventsController < ApplicationController
     @events = Event.all
     @up_events = Event.upcoming
     @prev_events = Event.previous
-    @my_events = Attendant.my_events(current_user)
   end
 
   def show
     @event = Event.find(params[:id])
-    @attendees = []
-    @event.attendants.each do |user|
-      @attendees << User.find(user.user_id)
-    end
+    @attendants = @event.attendees
   end
 
   def new
@@ -24,9 +20,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @event = Event.new(event_args)
-    @event.set_user!(current_user)
+    @event = current_user.events.build(event_args)
     if @event.save
       redirect_to root_path
     else

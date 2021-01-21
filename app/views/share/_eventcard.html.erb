@@ -10,7 +10,7 @@
       Date: <%= obj.date.strftime("%B %d, %Y | %l:%M %p") %>
     </h6>
     <h6 class="card-subtitle mb-2 text-muted">
-      Created By: <%= User.find(obj.created_by).username %>
+      Created By: <%= User.find(obj.creator_id).username %>
     </h6>
     <% if logged_in? %>
       <% if current_user.id == obj.created_by || attending?(obj.id, current_user.id) %>
