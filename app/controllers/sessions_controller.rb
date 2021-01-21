@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_back_or root_path
     else
-      flash.now[:danger] = 'Invalid email!'
+      flash.now[:notice] = "You seem to not exist around here! Sign Up!"
       render 'new'
     end
   end

@@ -31,8 +31,10 @@ class EventsController < ApplicationController
   def destroy; end
 
   def attend
+    @event = Event.find(params[:id])
     @event.attendees << current_user
     @event.save
+    redirect_to root_path
   end
 
   private

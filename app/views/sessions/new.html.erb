@@ -7,5 +7,10 @@
       </div>
       <%= f.submit "Let me in!", class: 'btn btn-primary' %>
     <% end %>
+    <% flash.each do |type, msg| %>
+      <div class="mt-4 alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
   </div>
 </div>

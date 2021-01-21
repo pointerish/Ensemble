@@ -13,7 +13,7 @@
       Created By: <%= User.find(obj.creator_id).username %>
     </h6>
     <% if logged_in? %>
-      <% if current_user.id == obj.created_by || attending?(obj.id, current_user.id) %>
+      <% if current_user.id == obj.creator_id || attending?(obj.id, current_user.id) %>
         <h6 class="card-subtitle mb-2 text-muted">
           You already registered to attend this event!
         </h6>

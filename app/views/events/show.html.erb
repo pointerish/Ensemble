@@ -2,10 +2,10 @@
   <div class="col-10 p-0">
     <%= render partial: 'share/eventcard', locals: {obj: @event} %>
   </div>
-    <% if @attendees.length > 0 %>
+    <% if @attendants.length > 0 %>
       <h3>The following users are attending:</h3>
       <ul>
-        <% @attendees.each do |attendee| %>
+        <% @attendants.each do |attendee| %>
           <li><%= attendee.username %></li>
         <% end %>
       </ul>
