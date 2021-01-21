@@ -30,7 +30,6 @@ To boot `Ensemble` run the following commands:
 
 - `bin/bundle install` from inside of the project's root directory
 - `bin/rails db:migrate` to run the database migrations
-- `bin/rails db:seed` to setup test users and events
 - `bin/rails s`  to run the application with the Puma web server
 
 In case of a Webpacker error then run the following command:
