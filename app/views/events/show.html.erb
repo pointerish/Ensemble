@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-10 p-0">
+    <%= render partial: 'share/eventcard', locals: {obj: @event} %>
+  </div>
+    <% if @attendants.length > 0 %>
+      <h3>The following users are attending:</h3>
+      <ul>
+        <% @attendants.each do |attendee| %>
+          <li><%= attendee.username %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <h3>No uses are attending this event just yet!</h3>
+    <% end %>
+  </div>
+</div>

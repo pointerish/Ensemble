@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="h2">Upcoming Events</div>
+      <% @up_events.each do |event| %>
+        <%= render partial: 'share/eventcard', locals: {obj: event} %>
+      <% end %>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="h2">Past Events</div>
+      <% @prev_events.each do |event| %>
+        <%= render partial: 'share/eventcard', locals: {obj: event} %>
+      <% end %>
+    </div>
+  </div>
+</div>

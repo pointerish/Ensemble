@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Signika");
+
+* {
+  font-family: "Signika", sans-serif;
+}
+
+li {
+  list-style: none;
+
+  a {
+    color: black;
+  }
+}
+
+.red-me:hover {
+  text-decoration: underline;
+  text-decoration-color: #ff4000;
+}
+
+a.mybutton {
+  text-decoration: none;
+  color: black;
+}
+
+.card {
+  background-color: #f2f2f2;
+}
+
+.card:hover {
+  box-shadow: 6px 6px 1px 1px #ff4000;
+}
+
+form {
+  margin-top: 5rem;
+}

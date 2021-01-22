@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PrivateEvents</title>
+
+<head>
+    <title>Ensemble</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('logo.png') %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <li class="nav-item">
+          <%= image_tag "logo.png", style: 'height:40px;width:40px;' %>
+        </li>
+        <a class="navbar-brand red-me d-none d-md-block" href="#">Ensemble</a>
+        <li class="nav-item"><%= link_to "All Events", root_path, class: 'nav-link' %></li>
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to "My Events", user_path(current_user), class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "New Event", new_event_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "Log Out", logout_path, method: :delete, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Log In", login_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "Sign Up", signup_path, class: 'nav-link' %></li>
+        <% end %>
+    </nav>
+    <div class="container">
+      <div class="col-12 p-0">
+        <% if logged_in? %>
+          <div class="h1 p-0">Hi, <%= User.find(current_user.id).username %>!</div>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
-  </body>
+</body>
 </html>
